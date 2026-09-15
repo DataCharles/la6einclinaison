@@ -202,7 +202,7 @@
 
         .hero {
             text-align: center;
-            padding: 40px 0 60px;
+            padding: 40px 0 20px;
         }
 
         .kicker {
@@ -231,6 +231,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: transparent;
             filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.35));
             margin-bottom: 20px;
             animation: breathe 8s ease-in-out infinite;
@@ -252,72 +253,10 @@
             line-height: 1.6;
         }
 
-        .cover {
-            width: 100%;
-            max-width: 320px;
-            display: block;
-            margin: 0 auto 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 50px rgba(0, 229, 255, 0.25), 0 0 20px rgba(212, 175, 55, 0.2);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .card {
-            position: relative;
-            background: rgba(10, 18, 32, 0.65);
-            border: 1px solid rgba(0, 229, 255, 0.18);
-            border-top: 2px solid var(--gold);
-            border-radius: 8px;
-            padding: 40px 36px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 0 40px rgba(0, 229, 255, 0.08), inset 0 1px 0 rgba(255,255,255,0.04);
-            margin-bottom: 40px;
-        }
-
-        .card::before,
-        .card::after {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            border-color: var(--gold);
-            opacity: 0.55;
-        }
-        .card::before {
-            top: 10px; left: 10px;
-            border-top: 1px solid;
-            border-left: 1px solid;
-        }
-        .card::after {
-            bottom: 10px; right: 10px;
-            border-bottom: 1px solid;
-            border-right: 1px solid;
-        }
-
-        .card h2 {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 18px;
-        }
-
-        .card p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--text);
-            font-weight: 300;
-        }
-
-        .card p + p { margin-top: 16px; }
-
-        /* Frise */
+        /* ----- Frise évolutive (placée juste après le sous-titre) ----- */
         .evolution {
             position: relative;
-            margin: 60px 0 50px;
+            margin: 40px 0 50px;
             padding: 0 8px;
         }
 
@@ -423,6 +362,7 @@
             text-transform: uppercase;
             color: var(--gold-light);
             margin-bottom: 6px;
+            line-height: 1.3;
         }
 
         .stage:first-child .label { color: #9be7ff; }
@@ -434,6 +374,69 @@
             color: #93a8bd;
             line-height: 1.45;
         }
+
+        /* ----- Image de couverture (déplacée après la frise) ----- */
+        .cover {
+            width: 100%;
+            max-width: 320px;
+            display: block;
+            margin: 0 auto 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0, 229, 255, 0.25), 0 0 20px rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .card {
+            position: relative;
+            background: rgba(10, 18, 32, 0.65);
+            border: 1px solid rgba(0, 229, 255, 0.18);
+            border-top: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 40px 36px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.08), inset 0 1px 0 rgba(255,255,255,0.04);
+            margin-bottom: 40px;
+        }
+
+        .card::before,
+        .card::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-color: var(--gold);
+            opacity: 0.55;
+        }
+        .card::before {
+            top: 10px; left: 10px;
+            border-top: 1px solid;
+            border-left: 1px solid;
+        }
+        .card::after {
+            bottom: 10px; right: 10px;
+            border-bottom: 1px solid;
+            border-right: 1px solid;
+        }
+
+        .card h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text);
+            font-weight: 300;
+        }
+
+        .card p + p { margin-top: 16px; }
 
         .cta {
             text-align: center;
@@ -575,19 +578,45 @@
     <div class="wrapper">
 
         <header class="hero">
-            <span class="kicker">Roman d'anticipation · 2075</span>
+            <span class="kicker">Roman d'anticipation · 2074</span>
             <h1>La Sixième<br>Inclinaison</h1>
             <p class="subtitle">
                 Une odyssée aux confins de la réalité. Une humanité à la recherche de la prochaine étape de son évolution — ou de sa mise en esclavage par les Machines.
             </p>
         </header>
 
+        <!-- Frise évolutive (déplacée ici, entre sous-titre et couverture) -->
+        <section class="evolution" aria-label="Frise évolutive du roman">
+            <p class="evolution-title">Fragments d'une métamorphose</p>
+            <div class="evolution-track">
+
+                <div class="stage">
+                    <div class="node"></div>
+                    <div class="label">Homo Sapiens</div>
+                    <div class="sub">L'ère du contrôle, de la peur et du simulacre.</div>
+                </div>
+
+                <div class="stage">
+                    <div class="node"></div>
+                    <div class="label">Le Passage (en cours)</div>
+                    <div class="sub">Le Psykhē, l'ancien langage, la vibration du vivant.</div>
+                </div>
+
+                <div class="stage">
+                    <div class="node"></div>
+                    <div class="label">Homo Psykhēis (le Futur)</div>
+                    <div class="sub">La symbiose avec le vivant, la fin des machines.</div>
+                </div>
+
+            </div>
+        </section>
+
         <img src="couverture.jpg" alt="Couverture du roman La Sixième Inclinaison" class="cover">
 
         <section class="card">
             <h2>Synopsis</h2>
             <p>
-                Ce récit d'anticipation dépeint une Europe dystopique de 2075,
+                Ce récit d'anticipation dépeint une Europe dystopique de 2074,
                 fragmentée en citadelles technologiques contrôlées par une oligarchie
                 transhumaniste et une intelligence artificielle hégémonique nommée
                 Neur⧭mnI.
@@ -611,31 +640,6 @@
                 culmine par la dissolution du pouvoir technocratique, marquant le retour
                 à une symbiose naturelle et spirituelle avec la Terre.
             </p>
-        </section>
-
-        <section class="evolution" aria-label="Frise évolutive du roman">
-            <p class="evolution-title">Fragments d'une métamorphose</p>
-            <div class="evolution-track">
-
-                <div class="stage">
-                    <div class="node"></div>
-                    <div class="label">Homo Sapiens (l'ère techno-industrielle)</div>
-                    <div class="sub">L'ère du contrôle, de la peur et du simulacre.</div>
-                </div>
-
-                <div class="stage">
-                    <div class="node"></div>
-                    <div class="label">Le Passage (en cours)</div>
-                    <div class="sub">Le Psykhē, l'ancien langage, la vibration du vivant.</div>
-                </div>
-
-                <div class="stage">
-                    <div class="node"></div>
-                    <div class="label">Homo Psykhēis (le Futur)</div>
-                    <div class="sub">La symbiose avec le vivant, la fin des machines.</div>
-                </div>
-
-            </div>
         </section>
 
         <div class="cta">
