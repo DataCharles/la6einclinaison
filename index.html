@@ -141,6 +141,16 @@
             line-height: 1.6;
         }
 
+        /* ----- Image de couverture ----- */
+        .cover {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
+        }
+
         /* ----- Carte synopsis ----- */
         .card {
             background: rgba(10, 18, 32, 0.65);
@@ -230,6 +240,17 @@
             line-height: 1.5;
         }
 
+        .author-info a {
+            color: var(--neon);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .author-info a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
         /* ----- Pied de page ----- */
         footer {
             text-align: center;
@@ -257,23 +278,38 @@
             <span class="kicker">Roman · Science-Fiction</span>
             <h1>La Sixième<br>Inclinaison</h1>
             <p class="subtitle">
-                Une odyssée aux confins de la réalité, dans laquelle l'humanité cherche sa propre évolution — ou de sa fin.
+                Une odyssée aux confins de la réalité, dans laquelle l'humanité cherche sa propre évolution — ou sa fin.
             </p>
         </header>
-            <img src="couverture.jpg" alt="Couverture du roman La Sixième Inclinaison"
-             style="width:100%; max-width:300px; display:block; margin: 0 auto 40px;
-                    border-radius:12px; box-shadow:0 0 40px rgba(0,229,255,0.4);">
+
+        <img src="couverture.jpg" alt="Couverture du roman La Sixième Inclinaison" class="cover">
+
         <section class="card">
             <h2>Synopsis</h2>
             <p>
-                Ce récit d'anticipation dépeint une Europe dystopique de 2074, fragmentée en citadelles technologiques contrôlées par une oligarchie transhumaniste et une intelligence artificielle hégémonique nommée Neur⧭mnI. Le protagoniste, Joseph d'Angèle, un audio-architecte de génie soumis à ces démons, invente le Psykhē, un programme sonore capable d’altérer la conscience.
-
-Traqué par les forces de sécurité et les milices augmentées, il rejoint un groupe de scientifiques résistants mené par l'énigmatique Sharp dans un refuge alpin. Là-bas, la découverte d'un ancien langage et d'un étrange champignon provoque une mutation évolutive qui projète Joseph et ses camarades, d'Homo Sapiens en Homo Psykhēis, des êtres capables de percevoir et d'interagir avec les vibrations fondamentales du vivant. 
-
-Cette nouvelle humanité engage une lutte finale contre la Machine pour briser les simulacres d'une réalité devenue artificielle. Le conflit culmine par la dissolution du pouvoir technocratique, marquant le retour à une symbiose naturelle et spirituelle avec la Terre.
-
+                Ce récit d'anticipation dépeint une Europe dystopique de 2074,
+                fragmentée en citadelles technologiques contrôlées par une oligarchie
+                transhumaniste et une intelligence artificielle hégémonique nommée
+                Neur⧭mnI.
             </p>
             <p>
+                Le protagoniste, Joseph d'Angèle, un audio-architecte de génie soumis
+                à ces démons, invente le Psykhē, un programme sonore capable d'altérer
+                la conscience.
+            </p>
+            <p>
+                Traqué par les forces de sécurité et les milices augmentées, il rejoint
+                un groupe de scientifiques résistants mené par l'énigmatique Sharp dans
+                un refuge alpin. Là-bas, la découverte d'un ancien langage et d'un
+                étrange champignon provoque une mutation évolutive qui projette Joseph
+                et ses camarades d'Homo Sapiens en Homo Psykhēis, des êtres capables
+                de percevoir et d'interagir avec les vibrations fondamentales du vivant.
+            </p>
+            <p>
+                Cette nouvelle humanité engage une lutte finale contre la Machine pour
+                briser les simulacres d'une réalité devenue artificielle. Le conflit
+                culmine par la dissolution du pouvoir technocratique, marquant le retour
+                à une symbiose naturelle et spirituelle avec la Terre.
             </p>
         </section>
 
@@ -285,13 +321,13 @@ Cette nouvelle humanité engage une lutte finale contre la Machine pour briser l
             <div class="author-info">
                 <h3>Charles Letellier</h3>
                 <p>
-                   Façonné par les livres et de nombreux voyages qui l'ont mené
-des Amazonies aux forêts de Sibérie, Charles Letellier a exercé tous
-les métiers : directeur de revue littéraire, patron de
-restaurant, producteur audio, négociant en métaux précieux. Il cherche
-actuellement à publier un roman de science-fiction, écrit des
-nouvelles et des articles qu'il publie régulièrement sur son blog
-letellier.substack.com.
+                    Façonné par les livres et de nombreux voyages qui l'ont mené des
+                    Amazonies aux forêts de Sibérie, Charles Letellier a exercé tous
+                    les métiers : directeur de revue littéraire, patron de restaurant,
+                    producteur audio, négociant en métaux précieux. Il cherche
+                    actuellement à publier un roman de science-fiction, écrit des
+                    nouvelles et des articles qu'il publie régulièrement sur son blog
+                    <a href="https://letellier.substack.com" target="_blank" rel="noopener">letellier.substack.com</a>.
                 </p>
             </div>
         </section>
