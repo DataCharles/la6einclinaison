@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Sixième Inclinaison — Roman de Science-Fiction</title>
-    <meta name="description" content="La Sixième Inclinaison, un roman de science-fiction de Charles Letellier. Téléchargez votre exemplaire gratuitement.">
+    <meta name="description" content="La Sixième Inclinaison, un roman de science-fiction de Charles Letellier. Une odyssée anthropologique et évolutive. Téléchargez votre exemplaire gratuitement.">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JV330FECP1"></script>
@@ -15,10 +15,10 @@
       gtag('config', 'G-JV330FECP1');
     </script>
 
-    <!-- Polices : Anton pour le titre, Rajdhani pour les sous-titres, Exo 2 pour le corps -->
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@300;400;600&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@300;400;600&family=Exo+2:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -77,29 +77,57 @@
             to   { background-position: 1000px 1000px; }
         }
 
-        /* Nébuleuse */
+        /* ----- Nébuleuse : cyan (technologie) → doré (symbiose) ----- */
         body::before {
             content: '';
             position: fixed;
             top: -20%; left: -20%;
             width: 140%; height: 140%;
             background:
-                radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.12), transparent 45%),
-                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.10), transparent 50%);
-            filter: blur(40px);
+                radial-gradient(circle at 20% 15%, rgba(0, 229, 255, 0.14), transparent 45%),
+                radial-gradient(circle at 80% 90%, rgba(212, 175, 55, 0.14), transparent 55%),
+                radial-gradient(circle at 60% 50%, rgba(255, 45, 149, 0.05), transparent 60%);
+            filter: blur(50px);
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Grille HUD discrète */
+        /* ----- Grille HUD discrète ----- */
         .grid-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
             background-size: 50px 50px;
             pointer-events: none;
             z-index: 0;
+        }
+
+        /* ----- Strates anthropologiques (couches horizontales) ----- */
+        .strata {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.55;
+            background-image:
+                linear-gradient(to bottom,
+                    rgba(212, 175, 55, 0) 0%,
+                    rgba(212, 175, 55, 0) 55%,
+                    rgba(212, 175, 55, 0.04) 58%,
+                    rgba(212, 175, 55, 0) 59%),
+                linear-gradient(to bottom,
+                    rgba(212, 175, 55, 0) 68%,
+                    rgba(212, 175, 55, 0.06) 72%,
+                    rgba(212, 175, 55, 0) 73%),
+                linear-gradient(to bottom,
+                    rgba(212, 175, 55, 0) 80%,
+                    rgba(212, 175, 55, 0.08) 84%,
+                    rgba(212, 175, 55, 0) 85%),
+                linear-gradient(to bottom,
+                    rgba(212, 175, 55, 0) 90%,
+                    rgba(212, 175, 55, 0.10) 95%,
+                    rgba(212, 175, 55, 0) 96%);
         }
 
         /* ----- Mise en page ----- */
@@ -145,6 +173,12 @@
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.35));
             margin-bottom: 20px;
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.30)); }
+            50%      { filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.55)); }
         }
 
         .subtitle {
@@ -171,15 +205,37 @@
 
         /* ----- Carte synopsis ----- */
         .card {
+            position: relative;
             background: rgba(10, 18, 32, 0.65);
             border: 1px solid rgba(0, 229, 255, 0.18);
             border-top: 2px solid var(--gold);
             border-radius: 8px;
-            padding: 36px 32px;
+            padding: 40px 36px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 0 40px rgba(0, 229, 255, 0.08), inset 0 1px 0 rgba(255,255,255,0.04);
             margin-bottom: 40px;
+        }
+
+        /* Coins sacrés : géométrie ancienne + HUD */
+        .card::before,
+        .card::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-color: var(--gold);
+            opacity: 0.55;
+        }
+        .card::before {
+            top: 10px; left: 10px;
+            border-top: 1px solid;
+            border-left: 1px solid;
+        }
+        .card::after {
+            bottom: 10px; right: 10px;
+            border-bottom: 1px solid;
+            border-right: 1px solid;
         }
 
         .card h2 {
@@ -200,6 +256,156 @@
         }
 
         .card p + p { margin-top: 16px; }
+
+        /* ----- Section « L'Évolution » : frise ----- */
+        .evolution {
+            position: relative;
+            margin: 60px 0 50px;
+            padding: 0 8px;
+        }
+
+        .evolution-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 36px;
+            opacity: 0.9;
+        }
+
+        .evolution-track {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .evolution-track::before {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: 8%;
+            right: 8%;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(0, 229, 255, 0.5) 0%,
+                rgba(212, 175, 55, 0.5) 50%,
+                rgba(212, 175, 55, 0.8) 100%);
+            z-index: 0;
+        }
+
+        .evolution-track::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8%;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 12px 3px rgba(212, 175, 55, 0.7);
+            animation: travel 9s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes travel {
+            0%   { left: 8%; opacity: 0; }
+            10%  { opacity: 1; }
+            90%  { opacity: 1; }
+            100% { left: 92%; opacity: 0; }
+        }
+
+        .stage {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            text-align: center;
+            padding: 0 6px;
+        }
+
+        .stage .node {
+            width: 22px;
+            height: 22px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: var(--bg-deep);
+            border: 1px solid var(--gold);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.35), inset 0 0 6px rgba(212, 175, 55, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stage .node::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 8px var(--gold-light);
+        }
+
+        .stage:first-child .node {
+            border-color: var(--neon);
+            box-shadow: 0 0 12px rgba(0, 229, 255, 0.45), inset 0 0 6px rgba(0, 229, 255, 0.4);
+        }
+        .stage:first-child .node::before {
+            background: var(--neon);
+            box-shadow: 0 0 8px var(--neon);
+        }
+
+        .stage .label {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 6px;
+        }
+
+        .stage:first-child .label { color: #9be7ff; }
+
+        .stage .sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #93a8bd;
+            line-height: 1.45;
+        }
+
+        /* ----- Citation interlude ----- */
+        .quote {
+            margin: 50px auto 60px;
+            max-width: 640px;
+            padding: 8px 0 8px 24px;
+            border-left: 2px solid var(--gold);
+        }
+
+        .quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #e7d9b0;
+            letter-spacing: 0.01em;
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 12px;
+            font-family: 'Rajdhani', sans-serif;
+            font-style: normal;
+            font-size: 0.78rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #7d8ea3;
+        }
 
         /* ----- Bouton de téléchargement ----- */
         .cta {
@@ -284,9 +490,36 @@
             text-transform: uppercase;
         }
 
+        /* ----- Responsive ----- */
         @media (max-width: 600px) {
             .card { padding: 28px 22px; }
             .author { flex-direction: column; text-align: center; }
+
+            /* Frise en verticale sur mobile */
+            .evolution-track {
+                flex-direction: column;
+                gap: 28px;
+            }
+            .evolution-track::before {
+                top: 0; bottom: 0;
+                left: 11px; right: auto;
+                width: 1px; height: auto;
+                background: linear-gradient(180deg,
+                    rgba(0, 229, 255, 0.5) 0%,
+                    rgba(212, 175, 55, 0.8) 100%);
+            }
+            .evolution-track::after { display: none; }
+            .stage {
+                position: relative;
+                text-align: left;
+                padding-left: 40px;
+            }
+            .stage .node {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 0;
+            }
         }
     </style>
 </head>
@@ -295,11 +528,12 @@
     <div class="stars2"></div>
     <div class="stars3"></div>
     <div class="grid-overlay"></div>
+    <div class="strata"></div>
 
     <div class="wrapper">
 
         <header class="hero">
-            <span class="kicker">Roman de Science-Fiction</span>
+            <span class="kicker">Roman d'anticipation · 2074</span>
             <h1>La Sixième<br>Inclinaison</h1>
             <p class="subtitle">
                 Une odyssée aux confins de la réalité. Une humanité à la recherche de la prochaine étape de son évolution — ou de sa fin.
@@ -307,7 +541,6 @@
         </header>
 
         <img src="couverture.jpg" alt="Couverture du roman La Sixième Inclinaison" class="cover">
-
 
         <section class="card">
             <h2>Synopsis</h2>
@@ -337,6 +570,38 @@
                 à une symbiose naturelle et spirituelle avec la Terre.
             </p>
         </section>
+
+        <!-- Frise évolutive -->
+        <section class="evolution" aria-label="Frise évolutive du roman">
+            <p class="evolution-title">Fragments d'une métamorphose</p>
+            <div class="evolution-track">
+
+                <div class="stage">
+                    <div class="node"></div>
+                    <div class="label">Homo Sapiens</div>
+                    <div class="sub">L'ère des données, de la peur et du simulacre.</div>
+                </div>
+
+                <div class="stage">
+                    <div class="node"></div>
+                    <div class="label">La Traversée</div>
+                    <div class="sub">Le Psykhē, l'ancien langage, la vibration retrouvée.</div>
+                </div>
+
+                <div class="stage">
+                    <div class="node"></div>
+                    <div class="label">Homo Psykhēis</div>
+                    <div class="sub">La symbiose avec le vivant, la fin des machines.</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Citation interlude -->
+        <blockquote class="quote">
+            <p>« Ce n'est pas un nouveau monde que nous cherchons, mais une nouvelle manière d'y vibrer. »</p>
+            <cite>— Joseph d'Angèle, Carnets de la Traversée</cite>
+        </blockquote>
 
         <div class="cta">
             <a href="inclinaison.pdf" class="download-button" download>Télécharger le roman</a>
