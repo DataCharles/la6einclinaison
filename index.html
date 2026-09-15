@@ -18,7 +18,7 @@
     <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@300;400;600&family=Exo+2:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@300;400;600&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -103,7 +103,7 @@
             z-index: 0;
         }
 
-        /* ----- Strates anthropologiques (couches horizontales) ----- */
+        /* ----- Strates anthropologiques ----- */
         .strata {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -217,7 +217,7 @@
             margin-bottom: 40px;
         }
 
-        /* Coins sacrés : géométrie ancienne + HUD */
+        /* Coins sacrés */
         .card::before,
         .card::after {
             content: '';
@@ -371,40 +371,11 @@
         .stage:first-child .label { color: #9be7ff; }
 
         .stage .sub {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 0.95rem;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
             color: #93a8bd;
             line-height: 1.45;
-        }
-
-        /* ----- Citation interlude ----- */
-        .quote {
-            margin: 50px auto 60px;
-            max-width: 640px;
-            padding: 8px 0 8px 24px;
-            border-left: 2px solid var(--gold);
-        }
-
-        .quote p {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.3rem;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #e7d9b0;
-            letter-spacing: 0.01em;
-        }
-
-        .quote cite {
-            display: block;
-            margin-top: 12px;
-            font-family: 'Rajdhani', sans-serif;
-            font-style: normal;
-            font-size: 0.78rem;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            color: #7d8ea3;
         }
 
         /* ----- Bouton de téléchargement ----- */
@@ -495,7 +466,6 @@
             .card { padding: 28px 22px; }
             .author { flex-direction: column; text-align: center; }
 
-            /* Frise en verticale sur mobile */
             .evolution-track {
                 flex-direction: column;
                 gap: 28px;
@@ -596,12 +566,6 @@
 
             </div>
         </section>
-
-        <!-- Citation interlude -->
-        <blockquote class="quote">
-            <p>« Ce n'est pas un nouveau monde que nous cherchons, mais une nouvelle manière d'y vibrer. »</p>
-            <cite>— Joseph d'Angèle, Carnets de la Traversée</cite>
-        </blockquote>
 
         <div class="cta">
             <a href="inclinaison.pdf" class="download-button" download>Télécharger le roman</a>
