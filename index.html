@@ -819,34 +819,46 @@
         // Année dans le pied de page
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ----- Chargement des articles via l'API JSON Substack -----
+        // ----- Chargement des articles Substack via AllOrigins + RSS -----
         (function() {
-            // Nom de votre publication Substack (sans .substack.com)
-            const PUBLICATION = 'letellier';
+            const RSS_URL = 'https://letellier.substack.com/feed';
             const MAX_POSTS = 3;
-
-            const API_URL = `https://${PUBLICATION}.substack.com/api/v1/archive?sort=new&limit=${MAX_POSTS}&offset=0`;
-
             const container = document.getElementById('substack-feed-container');
 
-            fetch(API_URL)
+            // AllOrigins contourne le CORS et nous renvoie le XML brut du flux RSS
+            const PROXY = `https://api.allorigins.win/get?url=${encodeURIComponent(RSS_URL)}&t=${Date.now()}`;
+
+            fetch(PROXY)
                 .then(response => {
                     if (!response.ok) throw new Error('Réponse HTTP ' + response.status);
                     return response.json();
                 })
-                .then(posts => {
-                    if (!posts || posts.length === 0) {
+                .then(data => {
+                    if (!data.contents) {
+                        throw new Error('Contenu du flux vide');
+                    }
+
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(data.contents, 'application/xml');
+                    const items = Array.from(xml.querySelectorAll('item')).slice(0, MAX_POSTS);
+
+                    if (items.length === 0) {
                         container.innerHTML = '<p class="blog-error">Aucun article pour le moment.</p>';
                         return;
                     }
 
                     let html = '';
-                    posts.forEach(post => {
-                        const date = new Date(post.post_date).toLocaleDateString('fr-FR', {
+                    items.forEach(item => {
+                        const title = item.querySelector('title')?.textContent || '';
+                        const link = item.querySelector('link')?.textContent || '';
+                        const pubDate = item.querySelector('pubDate')?.textContent || '';
+                        const description = item.querySelector('description')?.textContent || '';
+
+                        const date = new Date(pubDate).toLocaleDateString('fr-FR', {
                             year: 'numeric', month: 'long', day: 'numeric'
                         });
 
-                        const plainText = (post.description || '').replace(/<[^>]*>/g, '').trim();
+                        const plainText = description.replace(/<[^>]*>/g, '').trim();
                         const excerpt = plainText.length > 160
                             ? plainText.substring(0, 160) + '…'
                             : plainText;
@@ -854,11 +866,11 @@
                         html += `
                             <article class="blog-card">
                                 <h3 class="blog-card-title">
-                                    <a href="${post.canonical_url}" target="_blank" rel="noopener">${post.title}</a>
+                                    <a href="${link}" target="_blank" rel="noopener">${title}</a>
                                 </h3>
                                 <p class="blog-card-date">${date}</p>
                                 <p class="blog-card-excerpt">${excerpt}</p>
-                                <a href="${post.canonical_url}" target="_blank" rel="noopener" class="blog-card-link">Lire l'article →</a>
+                                <a href="${link}" target="_blank" rel="noopener" class="blog-card-link">Lire l'article →</a>
                             </article>
                         `;
                     });
