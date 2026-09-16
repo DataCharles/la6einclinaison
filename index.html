@@ -718,8 +718,8 @@
             <span class="kicker">Roman d'anticipation · 2075</span>
             <h1>La Sixième<br>Inclinaison</h1>
             <p class="subtitle">
-                Une odyssée aux confins de la réalité. 
-                Une humanité à la recherche de la prochaine étape de son évolution 
+                Une odyssée aux confins de la réalité.
+                Une humanité à la recherche de la prochaine étape de son évolution
                 — ou de sa mise en esclavage par les Machines.
             </p>
         </header>
@@ -787,9 +787,8 @@
              Section Blog Substack
              ============================================================ -->
         <section class="blog-substack" aria-label="Derniers articles du blog">
-            <h2 class="blog-title">Vers le blog
-                                    Cultures-Humaines & Mondes-Machine</h2>
-            <p class="blog-subtitle">Pamphlets techno-critique, nouvelles inédites et bien d'autres choses</p>
+            <h2 class="blog-title">Le Journal</h2>
+            <p class="blog-subtitle">Nouvelles, réflexions et fragments d'écriture</p>
             <div id="substack-feed-container">
                 <p class="blog-loading">Chargement des articles…</p>
             </div>
@@ -803,7 +802,8 @@
                 <h3>Charles Letellier</h3>
                 <p>
                     Façonné par les livres et de nombreux voyages qui l'ont mené des
-                    Amazonies aux forêts de Sibérie, Charles Letellier est une particule de lumière dans un océan d'obscurité.
+                    Amazonies aux forêts de Sibérie, Charles Letellier est une particule
+                    de lumière dans un océan d'obscurité.
                     <a href="https://letellier.substack.com" target="_blank" rel="noopener">letellier.substack.com</a>.
                 </p>
             </div>
@@ -816,40 +816,37 @@
     </div>
 
     <script>
+        // Année dans le pied de page
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ----- Chargement du flux Substack -----
+        // ----- Chargement des articles via l'API JSON Substack -----
         (function() {
-            const RSS_URL = 'https://letellier.substack.com/feed';
+            // Nom de votre publication Substack (sans .substack.com)
+            const PUBLICATION = 'letellier';
             const MAX_POSTS = 3;
 
-            // Proxy + paramètre anti-cache pour forcer la fraîcheur
-            const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=${MAX_POSTS}&t=${Date.now()}`;
+            const API_URL = `https://${PUBLICATION}.substack.com/api/v1/archive?sort=new&limit=${MAX_POSTS}&offset=0`;
 
             const container = document.getElementById('substack-feed-container');
 
             fetch(API_URL)
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Réponse HTTP ' + response.status);
-                    }
+                    if (!response.ok) throw new Error('Réponse HTTP ' + response.status);
                     return response.json();
                 })
-                .then(data => {
-                    if (!data.items || data.items.length === 0) {
+                .then(posts => {
+                    if (!posts || posts.length === 0) {
                         container.innerHTML = '<p class="blog-error">Aucun article pour le moment.</p>';
                         return;
                     }
 
                     let html = '';
-                    data.items.forEach(item => {
-                        const date = new Date(item.pubDate).toLocaleDateString('fr-FR', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
+                    posts.forEach(post => {
+                        const date = new Date(post.post_date).toLocaleDateString('fr-FR', {
+                            year: 'numeric', month: 'long', day: 'numeric'
                         });
 
-                        const plainText = item.description.replace(/<[^>]*>/g, '').trim();
+                        const plainText = (post.description || '').replace(/<[^>]*>/g, '').trim();
                         const excerpt = plainText.length > 160
                             ? plainText.substring(0, 160) + '…'
                             : plainText;
@@ -857,18 +854,18 @@
                         html += `
                             <article class="blog-card">
                                 <h3 class="blog-card-title">
-                                    <a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
+                                    <a href="${post.canonical_url}" target="_blank" rel="noopener">${post.title}</a>
                                 </h3>
                                 <p class="blog-card-date">${date}</p>
                                 <p class="blog-card-excerpt">${excerpt}</p>
-                                <a href="${item.link}" target="_blank" rel="noopener" class="blog-card-link">Lire l'article →</a>
+                                <a href="${post.canonical_url}" target="_blank" rel="noopener" class="blog-card-link">Lire l'article →</a>
                             </article>
                         `;
                     });
                     container.innerHTML = html;
                 })
                 .catch(error => {
-                    console.error('Erreur lors du chargement du flux Substack :', error);
+                    console.error('Erreur lors du chargement des articles Substack :', error);
                     container.innerHTML = '<p class="blog-error">Impossible de charger les articles pour le moment.</p>';
                 });
         })();
