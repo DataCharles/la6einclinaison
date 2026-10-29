@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Sixième Inclinaison — Roman de Science-Fiction</title>
-    <meta name="description" content="La Sixième Inclinaison, un roman de science-fiction de Charles Letellier. Une odyssée anthropologique et évolutive. Téléchargez votre exemplaire gratuitement.">
+    <title>Charles Letellier — Écrivain</title>
+    <meta name="description" content="Le site officiel de Charles Letellier. Romans, nouvelles, poésie, articles et pamphlets. Un univers allant du politique à la spiritualité, des voyages au bout du monde à la littérature.">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JV330FECP1"></script>
@@ -15,758 +15,310 @@
       gtag('config', 'G-JV330FECP1');
     </script>
 
-    <!-- Polices -->
+    <!-- Polices : Playfair Display (titres), Cormorant Garamond (texte), Montserrat (interface) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@300;400;600&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --neon: #00e5ff;
-            --gold: #d4af37;
-            --gold-light: #f5d76e;
-            --bg-deep: #05060f;
-            --text: #d9e6f2;
+            --bg-color: #0d0f12;      /* Gris encre profond */
+            --surface: #16191d;       /* Gris légèrement plus clair pour les cartes */
+            --text-main: #e6e1d9;     /* Blanc cassé / parchemin */
+            --text-muted: #9e9689;    /* Gris chaud pour le texte secondaire */
+            --accent: #c4a47c;        /* Cuivre / Or doux */
+            --border: #2a2e35;
         }
 
-        html, body {
-            min-height: 100%;
-            font-family: 'Exo 2', sans-serif;
-            color: var(--text);
-            background-color: var(--bg-deep);
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        /* ============================================================
-           1) ADN — double hélice cyan/or, à gauche et à droite
-           ============================================================ */
-        .dna-bg {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.14;
-            background-image:
-                url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300e5ff'/%3E%3Cstop offset='50%25' stop-color='%23d4af37'/%3E%3Cstop offset='100%25' stop-color='%2300e5ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23g)' stroke-width='1.4'%3E%3Cpath d='M 100,0 C 100,14 160,11 160,25 S 100,36 100,50 S 40,61 40,75 S 100,86 100,100 S 160,111 160,125 S 100,136 100,150 S 40,161 40,175 S 100,186 100,200'/%3E%3Cpath d='M 100,0 C 100,14 40,11 40,25 S 100,36 100,50 S 160,61 160,75 S 100,86 100,100 S 40,111 40,125 S 100,136 100,150 S 160,161 160,175 S 100,186 100,200'/%3E%3Cg stroke-width='0.7' opacity='0.75'%3E%3Cline x1='40' y1='25' x2='160' y2='25'/%3E%3Cline x1='40' y1='75' x2='160' y2='75'/%3E%3Cline x1='40' y1='125' x2='160' y2='125'/%3E%3Cline x1='40' y1='175' x2='160' y2='175'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-                url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300e5ff'/%3E%3Cstop offset='50%25' stop-color='%23d4af37'/%3E%3Cstop offset='100%25' stop-color='%2300e5ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23g)' stroke-width='1.4'%3E%3Cpath d='M 100,0 C 100,14 160,11 160,25 S 100,36 100,50 S 40,61 40,75 S 100,86 100,100 S 160,111 160,125 S 100,136 100,150 S 40,161 40,175 S 100,186 100,200'/%3E%3Cpath d='M 100,0 C 100,14 40,11 40,25 S 100,36 100,50 S 160,61 160,75 S 100,86 100,100 S 40,111 40,125 S 100,136 100,150 S 160,161 160,175 S 100,186 100,200'/%3E%3Cg stroke-width='0.7' opacity='0.75'%3E%3Cline x1='40' y1='25' x2='160' y2='25'/%3E%3Cline x1='40' y1='75' x2='160' y2='75'/%3E%3Cline x1='40' y1='125' x2='160' y2='125'/%3E%3Cline x1='40' y1='175' x2='160' y2='175'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            background-position: left top, right top;
-            background-repeat: repeat-y, repeat-y;
-            background-size: 140px 140px, 140px 140px;
-            animation: dna-breathe 12s ease-in-out infinite;
+        /* ----- Navigation ----- */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+            background: rgba(13, 15, 18, 0.95);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
         }
 
-        @keyframes dna-breathe {
-            0%, 100% { opacity: 0.10; }
-            50%      { opacity: 0.20; }
+        .nav-container {
+            max-width: 1000px; margin: 0 auto; padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* ============================================================
-           2) Conscience — halo central qui respire
-           ============================================================ */
-        .consciousness {
-            position: fixed;
-            top: 50%; left: 50%;
-            width: 760px;
-            height: 760px;
-            margin: -380px 0 0 -380px;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                rgba(212, 175, 55, 0.13) 0%,
-                rgba(0, 229, 255, 0.06) 40%,
-                transparent 72%);
-            filter: blur(60px);
-            pointer-events: none;
-            z-index: 0;
-            animation: pulse 14s ease-in-out infinite;
+        .nav-logo {
+            font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600;
+            color: var(--text-main); text-decoration: none; letter-spacing: 0.05em;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1);    opacity: 0.55; }
-            50%      { transform: scale(1.18); opacity: 1; }
+        .nav-links { display: flex; gap: 32px; }
+        
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);
+            text-decoration: none; transition: color 0.3s ease;
         }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* ============================================================
-           3) Fond étoilé
-           ============================================================ */
-        .stars, .stars2, .stars3 {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .stars {
-            background:
-                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-                radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-                radial-gradient(1px 1px at 130px 80px, #fff, transparent),
-                radial-gradient(2px 2px at 160px 120px, #fff, transparent);
-            background-size: 200px 200px;
-            animation: drift 120s linear infinite;
-            opacity: 0.8;
-        }
-        .stars2 {
-            background:
-                radial-gradient(1px 1px at 50px 50px, #9be7ff, transparent),
-                radial-gradient(1px 1px at 100px 150px, #9be7ff, transparent);
-            background-size: 300px 300px;
-            animation: drift 200s linear infinite reverse;
-            opacity: 0.6;
-        }
-        .stars3 {
-            background:
-                radial-gradient(1px 1px at 80px 200px, #ffb3e6, transparent),
-                radial-gradient(1px 1px at 220px 90px, #ffb3e6, transparent);
-            background-size: 400px 400px;
-            animation: drift 300s linear infinite;
-            opacity: 0.5;
-        }
-
-        @keyframes drift {
-            from { background-position: 0 0; }
-            to   { background-position: 1000px 1000px; }
-        }
-
-        /* ============================================================
-           4) Nébuleuse cyan (haut) → dorée (bas)
-           ============================================================ */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -20%; left: -20%;
-            width: 140%; height: 140%;
-            background:
-                radial-gradient(circle at 20% 15%, rgba(0, 229, 255, 0.14), transparent 45%),
-                radial-gradient(circle at 80% 90%, rgba(212, 175, 55, 0.14), transparent 55%);
-            filter: blur(50px);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* ============================================================
-           5) Grille HUD discrète
-           ============================================================ */
-        .grid-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image:
-                linear-gradient(rgba(0, 229, 255, 0.025) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 229, 255, 0.025) 1px, transparent 1px);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ============================================================
-           6) Strates anthropologiques
-           ============================================================ */
-        .strata {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.55;
-            background-image:
-                linear-gradient(to bottom,
-                    rgba(212, 175, 55, 0) 55%,
-                    rgba(212, 175, 55, 0.04) 58%,
-                    rgba(212, 175, 55, 0) 59%),
-                linear-gradient(to bottom,
-                    rgba(212, 175, 55, 0) 68%,
-                    rgba(212, 175, 55, 0.06) 72%,
-                    rgba(212, 175, 55, 0) 73%),
-                linear-gradient(to bottom,
-                    rgba(212, 175, 55, 0) 80%,
-                    rgba(212, 175, 55, 0.08) 84%,
-                    rgba(212, 175, 55, 0) 85%),
-                linear-gradient(to bottom,
-                    rgba(212, 175, 55, 0) 90%,
-                    rgba(212, 175, 55, 0.10) 95%,
-                    rgba(212, 175, 55, 0) 96%);
-        }
-
-        /* ============================================================
-           Mise en page
-           ============================================================ */
+        /* ----- Mise en page globale ----- */
         .wrapper {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 24px 80px;
+            max-width: 1000px; margin: 0 auto; padding: 140px 24px 80px;
         }
 
+        section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+        section:last-of-type { border-bottom: none; }
+
+        .section-title {
+            font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400;
+            color: var(--text-main); margin-bottom: 40px; display: flex; align-items: center;
+        }
+        .section-title::after {
+            content: ''; flex: 1; height: 1px; background: var(--border); margin-left: 20px;
+        }
+
+        /* ----- Hero (En-tête) ----- */
         .hero {
-            text-align: center;
-            padding: 40px 0 20px;
+            text-align: left; padding: 40px 0 80px; border-bottom: none;
+            max-width: 800px;
         }
 
-        .kicker {
-            display: inline-block;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 300;
-            font-size: 0.85rem;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--gold);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            padding: 6px 20px;
-            border-radius: 4px;
-            margin-bottom: 28px;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        .hero h1 {
+            font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 400; line-height: 1.1; margin-bottom: 24px;
+            color: var(--text-main);
         }
 
-        h1 {
-            font-family: 'Anton', sans-serif;
-            font-weight: 400;
-            font-size: clamp(2.8rem, 8vw, 5.5rem);
-            line-height: 1.05;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            background: linear-gradient(180deg, #ffffff 0%, var(--gold-light) 50%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.35));
-            margin-bottom: 20px;
-            animation: breathe 8s ease-in-out infinite;
+        .hero .subtitle {
+            font-size: 1.4rem; font-style: italic; color: var(--accent);
+            margin-bottom: 24px;
         }
 
-        @keyframes breathe {
-            0%, 100% { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.30)); }
-            50%      { filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.55)); }
+        .hero p {
+            font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 400;
+            color: var(--text-muted); line-height: 1.8; max-width: 650px;
         }
 
-        .subtitle {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 300;
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-            color: #93a8bd;
-            max-width: 560px;
-            margin: 0 auto;
-            line-height: 1.6;
+        /* ----- Grille des catégories (Romans, Nouvelles, etc.) ----- */
+        .grid-categories {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;
         }
 
-        /* ----- Frise évolutive ----- */
-        .evolution {
-            position: relative;
-            margin: 40px 0 50px;
-            padding: 0 8px;
+        .category-card {
+            background: var(--surface); border: 1px solid var(--border);
+            padding: 40px; border-radius: 2px; transition: border-color 0.3s ease;
+        }
+        .category-card:hover { border-color: var(--accent); }
+
+        .category-card h3 {
+            font-family: 'Playfair Display', serif; font-size: 1.6rem;
+            margin-bottom: 16px; color: var(--text-main);
         }
 
-        .evolution-title {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 36px;
-            opacity: 0.9;
+        .category-card p {
+            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;
         }
 
-        .evolution-track {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 16px;
+        .category-link {
+            font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
+            text-decoration: none; display: inline-block; border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        .category-link:hover { border-bottom-color: var(--accent); }
+
+        /* ----- Section Roman à la une ----- */
+        .featured-novel {
+            display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: start;
+            background: var(--surface); border: 1px solid var(--border);
+            padding: 40px; border-radius: 2px;
         }
 
-        .evolution-track::before {
-            content: '';
-            position: absolute;
-            top: 11px;
-            left: 8%;
-            right: 8%;
-            height: 1px;
-            background: linear-gradient(90deg,
-                rgba(0, 229, 255, 0.5) 0%,
-                rgba(212, 175, 55, 0.5) 50%,
-                rgba(212, 175, 55, 0.8) 100%);
-            z-index: 0;
+        .featured-novel img {
+            width: 100%; height: auto; display: block;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
         }
 
-        .evolution-track::after {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 8%;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--gold);
-            box-shadow: 0 0 12px 3px rgba(212, 175, 55, 0.7);
-            animation: travel 9s ease-in-out infinite;
-            z-index: 1;
+        .novel-details h3 {
+            font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 400;
+            margin-bottom: 8px; color: var(--text-main);
         }
 
-        @keyframes travel {
-            0%   { left: 8%; opacity: 0; }
-            10%  { opacity: 1; }
-            90%  { opacity: 1; }
-            100% { left: 92%; opacity: 0; }
+        .novel-details .meta {
+            font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent);
+            margin-bottom: 24px; display: block;
         }
 
-        .stage {
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            text-align: center;
-            padding: 0 6px;
+        .novel-details p {
+            font-size: 1.15rem; color: var(--text-muted); margin-bottom: 20px;
         }
 
-        .stage .node {
-            width: 22px;
-            height: 22px;
-            margin: 0 auto 18px;
-            border-radius: 50%;
-            background: var(--bg-deep);
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.35), inset 0 0 6px rgba(212, 175, 55, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* ----- Bouton de téléchargement ----- */
+        .btn-download {
+            display: inline-block; font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.1em; text-decoration: none; color: var(--bg-color);
+            background: var(--accent); padding: 14px 28px; border-radius: 2px;
+            transition: background 0.3s ease, transform 0.2s ease; margin-top: 10px;
+        }
+        .btn-download:hover { background: #d4b894; transform: translateY(-2px); }
+
+        /* ----- Section Substack / Articles ----- */
+        .substack-block {
+            text-align: center; background: var(--surface); border: 1px solid var(--border);
+            padding: 60px 40px; border-radius: 2px;
         }
 
-        .stage .node::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--gold);
-            box-shadow: 0 0 8px var(--gold-light);
+        .substack-block h3 {
+            font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400;
+            margin-bottom: 12px;
         }
 
-        .stage:first-child .node {
-            border-color: var(--neon);
-            box-shadow: 0 0 12px rgba(0, 229, 255, 0.45), inset 0 0 6px rgba(0, 229, 255, 0.4);
-        }
-        .stage:first-child .node::before {
-            background: var(--neon);
-            box-shadow: 0 0 8px var(--neon);
+        .substack-block .substack-name {
+            font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent);
+            margin-bottom: 24px; display: block;
         }
 
-        .stage .label {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--gold-light);
-            margin-bottom: 6px;
-            line-height: 1.3;
+        .substack-block p {
+            font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px;
         }
 
-        .stage:first-child .label { color: #9be7ff; }
-
-        .stage .sub {
-            font-family: 'Exo 2', sans-serif;
-            font-weight: 300;
-            font-size: 0.9rem;
-            color: #93a8bd;
-            line-height: 1.45;
+        /* ----- Section À propos ----- */
+        .about-text {
+            max-width: 700px; font-size: 1.2rem; color: var(--text-muted); line-height: 1.8;
         }
+        .about-text strong { color: var(--text-main); font-weight: 500; }
+        .about-text a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s; }
+        .about-text a:hover { border-bottom-color: var(--accent); }
 
-        /* ----- Image de couverture ----- */
-        .cover {
-            width: 100%;
-            max-width: 320px;
-            display: block;
-            margin: 0 auto 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 50px rgba(0, 229, 255, 0.25), 0 0 20px rgba(212, 175, 55, 0.2);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .card {
-            position: relative;
-            background: rgba(10, 18, 32, 0.65);
-            border: 1px solid rgba(0, 229, 255, 0.18);
-            border-top: 2px solid var(--gold);
-            border-radius: 8px;
-            padding: 40px 36px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 0 40px rgba(0, 229, 255, 0.08), inset 0 1px 0 rgba(255,255,255,0.04);
-            margin-bottom: 40px;
-        }
-
-        .card::before,
-        .card::after {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            border-color: var(--gold);
-            opacity: 0.55;
-        }
-        .card::before {
-            top: 10px; left: 10px;
-            border-top: 1px solid;
-            border-left: 1px solid;
-        }
-        .card::after {
-            bottom: 10px; right: 10px;
-            border-bottom: 1px solid;
-            border-right: 1px solid;
-        }
-
-        .card h2 {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 18px;
-        }
-
-        .card p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--text);
-            font-weight: 300;
-        }
-
-        .card p + p { margin-top: 16px; }
-
-        .cta {
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .download-button {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #05060f;
-            background: linear-gradient(135deg, var(--neon), #4ff0ff);
-            padding: 18px 42px;
-            border-radius: 4px;
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.55), 0 0 60px rgba(0, 229, 255, 0.25);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .download-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(0, 229, 255, 0.9), 0 0 90px rgba(212, 175, 55, 0.4);
-        }
-
-        .download-button::before {
-            content: '↓';
-            font-size: 1.2rem;
-        }
-
-        /* ============================================================
-           Section Blog Substack
-           ============================================================ */
-        .blog-substack {
-            margin: 60px 0 40px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            text-align: center;
-        }
-
-        .blog-kicker {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 300;
-            font-size: 0.75rem;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: #7d8ea3;
-            margin-bottom: 18px;
-            opacity: 0.75;
-        }
-
-        .blog-headline {
-            font-family: 'Anton', sans-serif;
-            font-weight: 400;
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            line-height: 1.15;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            background: linear-gradient(180deg, #ffffff 0%, var(--gold-light) 50%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.35));
-            margin-bottom: 22px;
-            animation: breathe 8s ease-in-out infinite;
-        }
-
-        .blog-headline-brand {
-            display: inline-block;
-            font-size: 1.1em;
-            letter-spacing: 0.06em;
-            background: linear-gradient(180deg, var(--neon) 0%, var(--gold-light) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            filter: drop-shadow(0 0 18px rgba(0, 229, 255, 0.4));
-        }
-
-        .blog-subtitle {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 400;
-            font-size: 1.15rem;
-            letter-spacing: 0.12em;
-            color: var(--gold-light);
-            margin-bottom: 42px;
-            text-transform: uppercase;
-            opacity: 0.95;
-        }
-
-        .blog-subtitle .sep {
-            color: rgba(212, 175, 55, 0.5);
-            margin: 0 8px;
-        }
-
-        .blog-all {
-            margin-top: 0;
-        }
-
-        .blog-all a {
-            display: inline-block;
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--gold);
-            text-decoration: none;
-            padding: 14px 32px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .blog-all a:hover {
-            color: var(--neon);
-            border-color: var(--neon);
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        /* ----- Section auteur ----- */
-        .author {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .author-info h3 {
-            font-family: 'Anton', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 0.15em;
-            color: var(--gold);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .author-info p {
-            font-size: 0.95rem;
-            color: #7d8ea3;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .author-info a {
-            color: var(--neon);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .author-info a:hover {
-            color: var(--gold);
-            text-decoration: underline;
-        }
-
+        /* ----- Pied de page ----- */
         footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 0.78rem;
-            color: #4a5a70;
-            letter-spacing: 0.15em;
-            font-family: 'Rajdhani', sans-serif;
-            text-transform: uppercase;
+            text-align: center; padding: 40px 0; border-top: 1px solid var(--border);
+            font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 400;
+            text-transform: uppercase; letter-spacing: 0.15em; color: #555;
         }
 
-        @media (max-width: 600px) {
-            .card { padding: 28px 22px; }
-            .author { flex-direction: column; text-align: center; }
-
-            .dna-bg {
-                background-size: 90px 90px, 90px 90px;
-                opacity: 0.09;
-            }
-
-            .consciousness {
-                width: 420px;
-                height: 420px;
-                margin: -210px 0 0 -210px;
-            }
-
-            .evolution-track { flex-direction: column; gap: 28px; }
-            .evolution-track::before {
-                top: 0; bottom: 0;
-                left: 11px; right: auto;
-                width: 1px; height: auto;
-                background: linear-gradient(180deg,
-                    rgba(0, 229, 255, 0.5) 0%,
-                    rgba(212, 175, 55, 0.8) 100%);
-            }
-            .evolution-track::after { display: none; }
-            .stage {
-                position: relative;
-                text-align: left;
-                padding-left: 40px;
-            }
-            .stage .node {
-                position: absolute;
-                left: 0; top: 0;
-                margin: 0;
-            }
+        /* ----- Responsive ----- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid-categories { grid-template-columns: 1fr; }
+            .featured-novel { grid-template-columns: 1fr; gap: 30px; }
+            .featured-novel img { max-width: 250px; margin: 0 auto; }
+            .wrapper { padding-top: 100px; }
+            .hero { text-align: center; margin: 0 auto; }
+            .hero p { margin: 0 auto; }
+            .section-title { flex-direction: column; align-items: flex-start; }
+            .section-title::after { width: 100%; margin: 10px 0 0 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ADN : double hélice à gauche et à droite -->
-    <div class="dna-bg"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Charles Letellier</a>
+            <div class="nav-links">
+                <a href="#romans">Romans</a>
+                <a href="#nouvelles">Nouvelles</a>
+                <a href="#articles">Articles & Pamphlets</a>
+                <a href="#poesie">Poésie</a>
+                <a href="#apropos">À propos</a>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Conscience : halo central qui respire -->
-    <div class="consciousness"></div>
+    <main class="wrapper">
 
-    <!-- Étoiles -->
-    <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
-
-    <!-- Grille HUD -->
-    <div class="grid-overlay"></div>
-
-    <!-- Strates anthropologiques -->
-    <div class="strata"></div>
-
-    <div class="wrapper">
-
+        <!-- En-tête -->
         <header class="hero">
-            <span class="kicker">Roman d'anticipation · 2075</span>
-            <h1>La Sixième<br>Inclinaison</h1>
-            <p class="subtitle">
-                Une odyssée aux confins de la réalité.
-                Une humanité à la recherche de la prochaine étape de son évolution
-                — ou de sa mise en esclavage par les Machines.
+            <h1>Charles Letellier</h1>
+            <p class="subtitle">Écrivain, essayiste et voyageur.</p>
+            <p>
+                Un univers vaste et organique, allant du politique à la spiritualité, 
+                des voyages au bout du monde à la littérature. À travers des formes 
+                multiples — romans, nouvelles, poésie et pamphlets — j'explore les 
+                tensions entre l'humain, la machine et le vivant.
             </p>
         </header>
 
-        <!-- Frise évolutive -->
-        <section class="evolution" aria-label="Frise évolutive du roman">
-            <p class="evolution-title">Fragments d'une métamorphose</p>
-            <div class="evolution-track">
-
-                <div class="stage">
-                    <div class="node"></div>
-                    <div class="label">Homo Sapiens</div>
-                    <div class="sub">L'ère du contrôle, de la peur et du simulacre.</div>
+        <!-- Section Romans -->
+        <section id="romans">
+            <h2 class="section-title">Romans</h2>
+            <div class="featured-novel">
+                <img src="couverture.jpg" alt="Couverture de La Sixième Inclinaison">
+                <div class="novel-details">
+                    <h3>La Sixième Inclinaison</h3>
+                    <span class="meta">Roman d'anticipation · 2075</span>
+                    <p>
+                        Une Europe dystopique, fragmentée en citadelles technologiques contrôlées par une oligarchie transhumaniste et une intelligence artificielle hégémonique.
+                    </p>
+                    <p>
+                        Joseph d'Angèle, un audio-architecte de génie, invente le Psykhē, un programme sonore capable d'altérer la conscience. Traqué, il rejoint un groupe de résistants dans un refuge alpin où la découverte d'un ancien langage et d'un champignon provoque une mutation évolutive : d'Homo Sapiens en <em>Homo Psykhēis</em>.
+                    </p>
+                    <a href="inclinaison.pdf" class="btn-download" download>Télécharger le roman (PDF)</a>
                 </div>
-
-                <div class="stage">
-                    <div class="node"></div>
-                    <div class="label">Le Passage (en cours)</div>
-                    <div class="sub">Le Psykhē, l'ancien langage, la vibration du vivant.</div>
-                </div>
-
-                <div class="stage">
-                    <div class="node"></div>
-                    <div class="label">Homo Psykhēis (le Futur)</div>
-                    <div class="sub">La symbiose avec le vivant, la fin des machines.</div>
-                </div>
-
             </div>
         </section>
 
-        <img src="couverture.jpg" alt="Couverture du roman La Sixième Inclinaison" class="cover">
-
-        <section class="card">
-            <h2>Synopsis</h2>
-            <p>
-               2075. Dans une Europe fragmentée en Citadelles-Bunker, l'humanité a abdiqué sa liberté au profit du « Monde-Machine ».
-                Sous l'œil omniscient de l'intelligence artificielle NeuromnI, le Code a remplacé la pensée et les implants occupent désormais les corps et les esprits. Pour l'oligarchie transhumaniste des Nouveaux États-Unis d'Europe (NEUE), l'évolution biologique est une vieille erreur qu'il s'agit de « hacker » pour vaincre la mort. Pour évoluer, c'est simple, il suffit de payer.
- </p>
-            <p>
-                Joseph d'Angèle, audio-architecte tourmenté, est l'inventeur du Psykhē : un programme sonore révolutionnaire capable de remodeler la plasticité cérébrale. Lorsqu'il découvre que son œuvre est détournée par la Technocratie militaire pour servir de prison mentale absolue, il plonge dans la clandestinité en emportant le code source.
-                Traqué par des Neuro-Sentinelles et des drones-guêpes, Joseph rejoint le HGroup, une cellule de résistants scientifiques repliée dans les Alpes. Ensemble, ils poursuivent un but qui dépasse la simple insurrection : provoquer la Sixième Inclinaison, l'ultime saut évolutif de notre espèce.
- </p>
-            <p>
-                À la croisée du thriller technologique et de la métaphysique, ce récit nous entraîne vers le « Passage » : la naissance de l'Homo Psykhēis. Entre l'artificialité glacée du silicium et la vibration primordiale du Vivant, Joseph devra choisir quel futur offrir à une humanité en état de siège.
-                 </p>
-            <p>
-                L'histoire de l'évolution n'est pas close. Elle attend sa prochaine étape.
-           
+        <!-- Section Nouvelles & Poésie -->
+        <section id="nouvelles">
+            <h2 class="section-title">Nouvelles & Poésie</h2>
+            <div class="grid-categories">
                 
-            </p>
-        </section>
+                <div class="category-card" id="nouvelles">
+                    <h3>Nouvelles</h3>
+                    <p>Des récits courts, des fragments d'existence, des instantanés de vies ordinaires ou extraordinaires. Des textes souvent ancrés dans le réel, mais toujours traversés par une étrangeté.</p>
+                    <a href="#" class="category-link">Découvrir les nouvelles →</a>
+                </div>
 
-        <div class="cta">
-            <a href="inclinaison.pdf" class="download-button" download>Télécharger le roman</a>
-        </div>
+                <div class="category-card" id="poesie">
+                    <h3>Poésie</h3>
+                    <p>La poésie comme respiration, comme résistance. Des textes courts, des images, des méditations sur la nature, le temps et la fragilité des choses.</p>
+                    <a href="#" class="category-link">Lire les poèmes →</a>
+                </div>
 
-        <!-- ============================================================
-             Section Blog Substack
-             ============================================================ -->
-        <section class="blog-substack" aria-label="Invitation à s'abonner au Substack">
-            <p class="blog-kicker">Le Journal</p>
-            <h2 class="blog-headline">
-                Pour aller plus loin,<br>
-                abonnez-vous au Substack<br>
-                <span class="blog-headline-brand">Cultures-Humaines &amp; Mondes-Machine</span>
-            </h2>
-            <p class="blog-subtitle">
-                Pamphlets techno-critiques<span class="sep">·</span>Réflexions<span class="sep">·</span>Nouvelles
-            </p>
-            <div class="blog-all">
-                <a href="https://letellier.substack.com" target="_blank" rel="noopener">Voir tous les articles →</a>
             </div>
         </section>
 
-        <section class="author">
-            <div class="author-info">
-                <h3>Charles Letellier</h3>
+        <!-- Section Articles & Pamphlets -->
+        <section id="articles">
+            <h2 class="section-title">Articles & Pamphlets</h2>
+            <div class="substack-block">
+                <span class="substack-name">Cultures-Humaines & Mondes-Machine</span>
+                <h3>La techno-critique, la politique et l'esprit.</h3>
+                <p>Retrouvez mes analyses, mes réflexions et mes coups de gueule sur Substack. Un espace pour penser le monde contemporain, entre décroissance, spiritualité et critique des illusions technologiques.</p>
+                <a href="https://letellier.substack.com" target="_blank" rel="noopener" class="btn-download">S'abonner au Substack</a>
+            </div>
+        </section>
+
+        <!-- Section À propos -->
+        <section id="apropos">
+            <h2 class="section-title">À propos</h2>
+            <div class="about-text">
                 <p>
-                    Façonné par les livres et de nombreux voyages qui l'ont mené des
-                    Amazonies aux forêts de Sibérie, Charles Letellier est une particule
-                    de lumière dans un océan d'obscurité.
-                    <a href="https://letellier.substack.com" target="_blank" rel="noopener">letellier.substack.com</a>.
+                    Façonné par les livres et de nombreux voyages qui l'ont mené des Amazonies aux forêts de Sibérie, <strong>Charles Letellier</strong> est une particule de lumière dans un océan d'obscurité. Il écrit des romans, des nouvelles et des articles qu'il publie régulièrement sur son blog <a href="https://letellier.substack.com" target="_blank" rel="noopener">Cultures-Humaines & Mondes-Machine</a>.
                 </p>
             </div>
         </section>
 
-        <footer>
-            © <span id="year"></span> · Charles Letellier · Tous droits réservés
-        </footer>
+    </main>
 
-    </div>
+    <!-- Pied de page -->
+    <footer>
+        © <span id="year"></span> Charles Letellier. Tous droits réservés.
+    </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
