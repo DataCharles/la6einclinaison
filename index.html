@@ -15,7 +15,7 @@
       gtag('config', 'G-JV330FECP1');
     </script>
 
-    <!-- Polices : Playfair Display (titres), Cormorant Garamond (texte), Montserrat (interface) -->
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -24,11 +24,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg-color: #0d0f12;      /* Gris encre profond */
-            --surface: #16191d;       /* Gris légèrement plus clair pour les cartes */
-            --text-main: #e6e1d9;     /* Blanc cassé / parchemin */
-            --text-muted: #9e9689;    /* Gris chaud pour le texte secondaire */
-            --accent: #c4a47c;        /* Cuivre / Or doux */
+            --bg-color: #0d0f12;
+            --surface: #16191d;
+            --text-main: #e6e1d9;
+            --text-muted: #9e9689;
+            --accent: #c4a47c;
             --border: #2a2e35;
         }
 
@@ -38,7 +38,7 @@
             font-family: 'Cormorant Garamond', serif;
             color: var(--text-main);
             background-color: var(--bg-color);
-            line-height: 1.7;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -47,156 +47,156 @@
             position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
             background: rgba(13, 15, 18, 0.95);
             border-bottom: 1px solid var(--border);
-            padding: 20px 0;
+            padding: 15px 0; /* Réduit */
         }
 
         .nav-container {
-            max-width: 1000px; margin: 0 auto; padding: 0 24px;
+            max-width: 900px; margin: 0 auto; padding: 0 20px; /* Réduit */
             display: flex; justify-content: space-between; align-items: center;
         }
 
         .nav-logo {
-            font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600;
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600;
             color: var(--text-main); text-decoration: none; letter-spacing: 0.05em;
         }
 
-        .nav-links { display: flex; gap: 32px; }
+        .nav-links { display: flex; gap: 20px; } /* Réduit */
         
         .nav-links a {
-            font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);
             text-decoration: none; transition: color 0.3s ease;
         }
         .nav-links a:hover { color: var(--accent); }
 
         /* ----- Mise en page globale ----- */
         .wrapper {
-            max-width: 1000px; margin: 0 auto; padding: 140px 24px 80px;
+            max-width: 900px; margin: 0 auto; padding: 100px 20px 60px; /* Réduit */
         }
 
-        section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+        section { padding: 40px 0; border-bottom: 1px solid var(--border); } /* Réduit */
         section:last-of-type { border-bottom: none; }
 
         .section-title {
-            font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400;
-            color: var(--text-main); margin-bottom: 40px; display: flex; align-items: center;
+            font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; /* Réduit */
+            color: var(--text-main); margin-bottom: 25px; /* Réduit */
+            display: flex; align-items: center;
         }
         .section-title::after {
             content: ''; flex: 1; height: 1px; background: var(--border); margin-left: 20px;
         }
 
-        /* ----- Hero (En-tête) ----- */
+        /* ----- Hero ----- */
         .hero {
-            text-align: left; padding: 40px 0 80px; border-bottom: none;
-            max-width: 800px;
+            text-align: left; padding: 20px 0 50px; border-bottom: none;
+            max-width: 750px;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 400; line-height: 1.1; margin-bottom: 24px;
-            color: var(--text-main);
+            font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); /* Réduit */
+            font-weight: 400; line-height: 1.1; margin-bottom: 16px;
         }
 
         .hero .subtitle {
-            font-size: 1.4rem; font-style: italic; color: var(--accent);
-            margin-bottom: 24px;
+            font-size: 1.2rem; font-style: italic; color: var(--accent);
+            margin-bottom: 16px;
         }
 
         .hero p {
-            font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 400;
-            color: var(--text-muted); line-height: 1.8; max-width: 650px;
+            font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 400; /* Réduit */
+            color: var(--text-muted); line-height: 1.7;
         }
 
-        /* ----- Grille des catégories (Romans, Nouvelles, etc.) ----- */
+        /* ----- Grille des catégories (Nouvelles, Poésie) ----- */
         .grid-categories {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; /* Réduit */
         }
 
         .category-card {
             background: var(--surface); border: 1px solid var(--border);
-            padding: 40px; border-radius: 2px; transition: border-color 0.3s ease;
+            padding: 25px; border-radius: 2px; transition: border-color 0.3s ease; /* Réduit */
         }
         .category-card:hover { border-color: var(--accent); }
 
         .category-card h3 {
-            font-family: 'Playfair Display', serif; font-size: 1.6rem;
-            margin-bottom: 16px; color: var(--text-main);
+            font-family: 'Playfair Display', serif; font-size: 1.3rem; /* Réduit */
+            margin-bottom: 10px;
         }
 
         .category-card p {
-            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;
+            font-size: 1rem; color: var(--text-muted); margin-bottom: 16px; /* Réduit */
         }
 
         .category-link {
-            font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 600;
+            font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
             text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
             text-decoration: none; display: inline-block; border-bottom: 1px solid transparent;
             transition: border-color 0.3s ease;
         }
         .category-link:hover { border-bottom-color: var(--accent); }
 
-        /* ----- Section Roman à la une ----- */
+        /* ----- Section Roman ----- */
         .featured-novel {
-            display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: start;
+            display: grid; grid-template-columns: 200px 1fr; gap: 30px; align-items: start; /* Vignette réduite */
             background: var(--surface); border: 1px solid var(--border);
-            padding: 40px; border-radius: 2px;
+            padding: 25px; border-radius: 2px;
         }
 
         .featured-novel img {
             width: 100%; height: auto; display: block;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
             border: 1px solid var(--border);
         }
 
         .novel-details h3 {
-            font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 400;
-            margin-bottom: 8px; color: var(--text-main);
+            font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; /* Réduit */
+            margin-bottom: 6px;
         }
 
         .novel-details .meta {
-            font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent);
-            margin-bottom: 24px; display: block;
+            font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 600; /* Réduit */
+            text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
+            margin-bottom: 16px; display: block;
         }
 
         .novel-details p {
-            font-size: 1.15rem; color: var(--text-muted); margin-bottom: 20px;
+            font-size: 1rem; color: var(--text-muted); margin-bottom: 12px;
         }
 
-        /* ----- Bouton de téléchargement ----- */
+        /* ----- Boutons ----- */
         .btn-download {
             display: inline-block; font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.1em; text-decoration: none; color: var(--bg-color);
-            background: var(--accent); padding: 14px 28px; border-radius: 2px;
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.05em; text-decoration: none; color: var(--bg-color);
+            background: var(--accent); padding: 10px 20px; border-radius: 2px;
             transition: background 0.3s ease, transform 0.2s ease; margin-top: 10px;
         }
         .btn-download:hover { background: #d4b894; transform: translateY(-2px); }
 
-        /* ----- Section Substack / Articles ----- */
+        /* ----- Section Substack ----- */
         .substack-block {
             text-align: center; background: var(--surface); border: 1px solid var(--border);
-            padding: 60px 40px; border-radius: 2px;
+            padding: 35px 25px; border-radius: 2px; /* Réduit */
         }
 
         .substack-block h3 {
-            font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400;
-            margin-bottom: 12px;
+            font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; /* Réduit */
+            margin-bottom: 10px;
         }
 
         .substack-block .substack-name {
-            font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent);
-            margin-bottom: 24px; display: block;
+            font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
+            margin-bottom: 16px; display: block;
         }
 
         .substack-block p {
-            font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 32px;
+            font-size: 1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 24px;
         }
 
         /* ----- Section À propos ----- */
         .about-text {
-            max-width: 700px; font-size: 1.2rem; color: var(--text-muted); line-height: 1.8;
+            max-width: 700px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;
         }
         .about-text strong { color: var(--text-main); font-weight: 500; }
         .about-text a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.3s; }
@@ -204,28 +204,24 @@
 
         /* ----- Pied de page ----- */
         footer {
-            text-align: center; padding: 40px 0; border-top: 1px solid var(--border);
-            font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 400;
-            text-transform: uppercase; letter-spacing: 0.15em; color: #555;
+            text-align: center; padding: 30px 0; border-top: 1px solid var(--border);
+            font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 400;
+            text-transform: uppercase; letter-spacing: 0.1em; color: #555;
         }
 
         /* ----- Responsive ----- */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .grid-categories { grid-template-columns: 1fr; }
-            .featured-novel { grid-template-columns: 1fr; gap: 30px; }
-            .featured-novel img { max-width: 250px; margin: 0 auto; }
-            .wrapper { padding-top: 100px; }
-            .hero { text-align: center; margin: 0 auto; }
-            .hero p { margin: 0 auto; }
+            .featured-novel { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+            .featured-novel img { max-width: 180px; margin: 0 auto; }
             .section-title { flex-direction: column; align-items: flex-start; }
-            .section-title::after { width: 100%; margin: 10px 0 0 0; }
+            .section-title::after { width: 100%; margin: 8px 0 0 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">Charles Letellier</a>
@@ -241,7 +237,6 @@
 
     <main class="wrapper">
 
-        <!-- En-tête -->
         <header class="hero">
             <h1>Charles Letellier</h1>
             <p class="subtitle">Écrivain, essayiste et voyageur.</p>
@@ -277,15 +272,15 @@
             <h2 class="section-title">Nouvelles & Poésie</h2>
             <div class="grid-categories">
                 
-                <div class="category-card" id="nouvelles">
+                <div class="category-card">
                     <h3>Nouvelles</h3>
-                    <p>Des récits courts, des fragments d'existence, des instantanés de vies ordinaires ou extraordinaires. Des textes souvent ancrés dans le réel, mais toujours traversés par une étrangeté.</p>
+                    <p>Des récits courts, des fragments d'existence, des instantanés de vies ordinaires ou extraordinaires.</p>
                     <a href="#" class="category-link">Découvrir les nouvelles →</a>
                 </div>
 
-                <div class="category-card" id="poesie">
+                <div class="category-card">
                     <h3>Poésie</h3>
-                    <p>La poésie comme respiration, comme résistance. Des textes courts, des images, des méditations sur la nature, le temps et la fragilité des choses.</p>
+                    <p>La poésie comme respiration, comme résistance. Des textes courts, des images, des méditations sur la nature et le temps.</p>
                     <a href="#" class="category-link">Lire les poèmes →</a>
                 </div>
 
@@ -298,7 +293,7 @@
             <div class="substack-block">
                 <span class="substack-name">Cultures-Humaines & Mondes-Machine</span>
                 <h3>La techno-critique, la politique et l'esprit.</h3>
-                <p>Retrouvez mes analyses, mes réflexions et mes coups de gueule sur Substack. Un espace pour penser le monde contemporain, entre décroissance, spiritualité et critique des illusions technologiques.</p>
+                <p>Retrouvez mes analyses, mes réflexions et mes coups de gueule sur Substack. Un espace pour penser le monde contemporain.</p>
                 <a href="https://letellier.substack.com" target="_blank" rel="noopener" class="btn-download">S'abonner au Substack</a>
             </div>
         </section>
@@ -315,7 +310,6 @@
 
     </main>
 
-    <!-- Pied de page -->
     <footer>
         © <span id="year"></span> Charles Letellier. Tous droits réservés.
     </footer>
